@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monisha M | Data Analyst Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Poppins and define custom dark mode colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#FFD369', // Gold/Yellow - for CTAs/Highlights (Light/Visible on Dark)
+                        'secondary-accent': '#4ECDC4', // Turquoise/Cyan - for Icons/Subtitles
+                        'background-dark': '#1A1A2E', // Deep Navy Blue
+                        'card-dark': '#2A2A44', // Slightly lighter card background
+                        'text-light': '#F0F0F0',
+                        'text-gray': '#B0B0C4', // Muted text on dark background
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for Poppins and Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght=400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for professional polish and responsiveness */
+        html { scroll-behavior: smooth; }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: theme('colors.primary-accent');
+            margin: 10px auto 30px;
+            border-radius: 2px;
+        }
+        /* Style for disabled project link */
+        .project-link-disabled {
+            @apply inline-block mt-4 text-sm text-gray-500 font-semibold cursor-not-allowed border border-gray-500 py-2 px-4 rounded-lg;
+        }
+        .project-link-active {
+            @apply inline-block mt-4 text-sm bg-secondary-accent text-background-dark font-semibold py-2 px-4 rounded-lg hover:bg-opacity-80 transition duration-300;
+        }
+        /* ATTENTION: Added temporary border to confirm all 5 images are loading */
+        .image-confirmation-border {
+            border: 4px solid rgb(50, 179, 205) !important; /* Standout color */
+            box-shadow: 0 0 15px rgba(50, 205, 205, 0.8) !important;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-light font-sans">
+
+    <!-- Sticky Navigation Bar -->
+    <header id="navbar" class="sticky top-0 bg-card-dark shadow-xl z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary-accent"><a href="#home">Monisha M</a></h1>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="text-text-light hover:text-primary-accent transition duration-300">HOME</a>
+                <a href="#projects" class="text-text-light hover:text-primary-accent transition duration-300">PROJECTS</a>
+                <a href="#skills" class="text-text-light hover:text-primary-accent transition duration-300">SKILLS</a>
+                <a href="#contact" class="text-text-light hover:text-primary-accent transition duration-300">CONTACT</a>
+            </nav>
+            <!-- Mobile Menu Placeholder - Requires JS to implement functionality -->
+            <button class="md:hidden text-2xl text-text-light"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="bg-background-dark py-24 md:py-40">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <!-- Hero Text -->
+            <div class="md:w-3/5 order-2 md:order-1 text-center md:text-left">
+                <p class="text-xl text-secondary-accent font-medium mb-2">Hello, I'm</p>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-primary-accent leading-none mb-3">Monisha M</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-text-light mb-6">Motivated Data Analyst | Problem Solver</h2>
+                
+                <!-- Description -->
+                <p class="text-lg text-text-gray mb-10 max-w-xl">
+                    Motivated Data Analyst leveraging strong programming skills in Python and C for software development, focusing on writing clean, efficient code for innovative projects that drive real-world impact.
+                </p>
+                
+                <a href="#projects" class="inline-block bg-primary-accent text-card-dark px-8 py-3 rounded-xl font-bold shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.02]">
+                    View Data Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <div class="mt-10 space-x-6">
+                    <a href="https://tinyurl.com/bddzjepz" target="_blank" class="text-3xl text-text-light hover:text-secondary-accent transition duration-300" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Monishahee" target="_blank" class="text-3xl text-text-light hover:text-secondary-accent transition duration-300" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:monishamarimuthu13@gmail.com" class="text-3xl text-text-light hover:text-secondary-accent transition duration-300" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Hero Image: Updated to Image 4 (My Image) -->
+            <div class="md:w-2/5 order-1 md:order-2">
+                <img src="C:\Users\Windows-11\Desktop\monisha\profile.jpg" alt="Monisha Marimuthu Professional Photo" 
+                     class="w-64 h-64 md:w-80 md:h-80 object-cover mx-auto rounded-full shadow-2xl border-4 border-secondary-accent transform transition duration-500 hover:scale-105 image-confirmation-border">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Me Section (Analytical Foundation) -->
+    <section id="about" class="py-16 md:py-24 bg-card-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title text-text-light">My Analytical Foundation</h2>
+            <div class="bg-background-dark p-8 md:p-12 rounded-xl shadow-2xl max-w-5xl mx-auto border border-secondary-accent border-opacity-30">
+                <p class="text-lg text-text-gray mb-6">My B.E. in Artificial Intelligence and Data Science provides a unique advantage in problem-solving: the ability to deeply analyze data and structure information logically. I combine technical proficiency in Python, C, and SQL with a passion for building clean, efficient, and meaningful systems.</p>
+                <p class="text-lg text-text-gray mb-8">I am eager to leverage my problem-solving abilities and commitment to continuous learning within a dynamic environment, focusing on products that create real-world impact.</p>
+                
+                <div class="flex flex-wrap gap-8 justify-center mt-6">
+                    <div class="text-center text-text-light">
+                        <i class="fas fa-graduation-cap text-4xl text-primary-accent mb-2"></i>
+                        <p class="font-semibold">B.E. AI and Data Science</p>
+                        <p class="text-sm text-text-gray">Avinashilingam Institute (CGPA 8.1)</p>
+                    </div>
+                    <div class="text-center text-text-light">
+                        <i class="fas fa-briefcase text-4xl text-primary-accent mb-2"></i>
+                        <p class="font-semibold">AI Intern</p>
+                        <p class="text-sm text-text-gray">Macreq Manufacturing Services</p>
+                    </div>
+                    <div class="text-center text-text-light">
+                        <i class="fas fa-database text-4xl text-primary-accent mb-2"></i>
+                        <p class="font-semibold">Data Science Intern</p>
+                        <p class="text-sm text-text-gray">Prodigy Infotech</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Projects Section (Case Studies & Dashboards) -->
+    <section id="projects" class="py-16 md:py-24 bg-background-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title text-text-light">Design and Data Projects</h2>
+            <p class="text-center text-text-gray mb-12">Showcasing data interpretation, user problem solving, and design thinking through four key artifacts.</p>
+
+            <!-- Project 1: Sales Dashboard (Data Visualization) - Updated to Image 1 (Dashboard 1) -->
+            <div class="bg-card-dark p-6 md:p-10 rounded-xl shadow-2xl mb-12 flex flex-col lg:flex-row gap-8 border border-primary-accent border-opacity-20">
+                <div class="lg:w-1/2">
+                    <span class="inline-block bg-primary-accent text-card-dark text-xs font-bold px-3 py-1 rounded-full mb-3">DATA VISUALIZATION</span>
+                    <h3 class="text-2xl font-bold text-secondary-accent mb-3">Retail Sales Analytics Dashboard (Power BI)</h3>
+                    <p class="text-sm text-text-gray mb-4">Skills: Data Visualization, Information Architecture, Power BI</p>
+                    <p class="mb-4 text-text-light">The challenge was transforming fragmented sales data into a cohesive, actionable visual experience for managers. I utilized Power BI to structure the data flow, emphasizing visual hierarchy (KPIs first, trends second) and targeted color-coding to minimize cognitive load.</p>
+                    <p class="mb-6 text-text-light">This project demonstrates the ability to translate complex data into an intuitive, decision-supportive UI.</p>
+                    <!-- Keeping the external link for the live dashboard -->
+                    <a href="https://www.linkedin.com/posts/monisha-marimuthu-2309592b7_excited-to-share-a-sales-analytics-dashboard-activity-7377199930488020994-J1ZX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwjLwQBHgxIpQxMZ_yxI2flLj4O40iga4E" target="_blank" class="project-link-active">
+                        View Live Dashboard <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+                <!-- Image 1: dashboard 1.jpg -->
+                <div class="lg:w-1/2 flex items-center justify-center">
+                    <img src="C:\Users\Windows-11\Desktop\monisha\dashboard 1.PNG" alt="Retail Sales Report Dashboard Screenshot" 
+                         class="w-full h-64 md:h-full object-cover object-top rounded-lg shadow-xl border-2 border-secondary-accent opacity-90 image-confirmation-border">
+                </div>
+            </div>
+
+            <!-- Project 2: Design Innovation (UX Design Thinking) - Updated to Image 5 (Delivery) -->
+            <div class="bg-card-dark p-6 md:p-10 rounded-xl shadow-2xl mb-12 flex flex-col lg:flex-row-reverse gap-8 border border-primary-accent border-opacity-20">
+                <div class="lg:w-1/2">
+                    <span class="inline-block bg-primary-accent text-card-dark text-xs font-bold px-3 py-1 rounded-full mb-3">PRODUCT DESIGN</span>
+                    <h3 class="text-2xl font-bold text-secondary-accent mb-3">Design Innovation: Empowering the Delivery Workforce</h3>
+                    <p class="text-sm text-text-gray mb-4">Skills: User Empathy, Problem Solving, Product Design Thinking</p>
+                    <p class="mb-4 text-text-light">This project utilized the User-Centric Design (UCD) methodology to identify key pain points and inefficiencies faced by logistics personnel. I developed conceptual designs for smart, user-friendly tools aimed at simplifying complex workflows.</p>
+                    <p class="mb-6 text-text-light">The focus was on creating designs that minimize manual errors and increase efficiency in demanding, real-world environments.</p>
+                </div>
+                <!-- Image 5: image_d41d02.png (Delivery) -->
+                <div class="lg:w-1/2">
+                    <img src="C:\Users\Windows-11\Desktop\monisha\delivery.png" alt="Delivery person using a mobile app for package handover" 
+                         class="w-full h-64 object-cover rounded-lg shadow-xl border-2 border-secondary-accent opacity-90 image-confirmation-border">
+                </div>
+            </div>
+
+            <!-- Project 3: Personal Task Scheduler (IoT/System Design) - Updated to Image 3 (Personal Task Scheduler) -->
+            <div class="bg-card-dark p-6 md:p-10 rounded-xl shadow-2xl mb-12 flex flex-col lg:flex-row gap-8 border border-primary-accent border-opacity-20">
+                <div class="lg:w-1/2">
+                    <span class="inline-block bg-primary-accent text-card-dark text-xs font-bold px-3 py-1 rounded-full mb-3">SYSTEM INTEGRATION</span>
+                    <h3 class="text-2xl font-bold text-secondary-accent mb-3">Integrated Task Scheduler with Wall Clock</h3>
+                    <p class="text-sm text-text-gray mb-4">Skills: System Integration, Prototyping, IOT 4.0 Principles</p>
+                    <p class="mb-4 text-text-light">Developed a personal task scheduler that syncs with a physical wall clock to manage daily tasks and deliver timely reminders. This project required balancing the technical implementation of hardware/software integration with the user experience of time management.</p>
+                    <p class="mb-6 text-text-light">The core design challenge was creating an unobtrusive, reliable system for seamless user adoption that aids productivity without causing distraction.</p>
+                </div>
+                <!-- Image 3: image_d41dbd.png (Personal Task Scheduler) -->
+                <div class="lg:w-1/2">
+                    <img src="C:\Users\Windows-11\Desktop\monisha\personal.png" alt="Screenshot of a digital task scheduling interface" 
+                         class="w-full h-64 object-cover object-top rounded-lg shadow-xl border-2 border-primary-accent opacity-90 image-confirmation-border">
+                </div>
+            </div>
+            
+            <!-- Project 4: Second Dashboard - Updated to Image 2 (Dashboard 2) and changed title -->
+            <div class="bg-card-dark p-6 md:p-10 rounded-xl shadow-2xl flex flex-col lg:flex-row-reverse gap-8 border border-primary-accent border-opacity-20">
+                <div class="lg:w-1/2">
+                    <span class="inline-block bg-primary-accent text-card-dark text-xs font-bold px-3 py-1 rounded-full mb-3">DATA ANALYSIS</span>
+                    <h3 class="text-2xl font-bold text-secondary-accent mb-3">Financial Sales Analysis for BK & MCD</h3>
+                    <p class="text-sm text-text-gray mb-4">Skills: Data Analysis, Advanced Power BI, Storytelling with Data</p>
+                    <p class="mb-4 text-text-light">This project focuses on deeper comparative financial analysis between two entities (BK & MCD), showcasing the ability to handle complex accounts and value data. It utilizes various chart types (waterfall, donut, area chart) to tell a comprehensive financial story over time.</p>
+                    <p class="mb-6 text-text-light">This dashboard highlights proficiency in processing detailed financial data and presenting multi-layered insights.</p>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMDYyNTFmOTctNDhlZS00ZTY3LWI2ZjMtNWM5ZDI2NTc2M2I3IiwidCI6IjcwNDg5YTI5LTljZmUtNDRiMi1hY2Q3LWQ0MWZjYWIzZGVmYyJ9" target="_blank" class="project-link-active bg-gray-600 hover:bg-gray-700">
+                        View Dashboard (Link Placeholder) <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+                <!-- Image 2: image.png (Dashboard 2) -->
+                <div class="lg:w-1/2 flex items-center justify-center">
+                    <img src="image.png" alt="Financial Sales Analysis Dashboard Screenshot" 
+                         class="w-full h-64 object-cover object-top rounded-lg shadow-xl border-2 border-primary-accent opacity-90 image-confirmation-border">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="py-16 md:py-24 bg-card-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title text-text-light">Technical Skills & Design Toolkit</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <div class="bg-background-dark p-6 rounded-xl shadow-2xl border-t-4 border-secondary-accent transition hover:shadow-primary-accent hover:shadow-md">
+                    <h3 class="text-xl font-semibold text-primary-accent mb-3"><i class="fas fa-drafting-compass mr-2"></i> UX & Design Focus</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-gray">
+                        <li>Data Visualization & Information Architecture</li>
+                        <li>User-Centric Design (UCD) Principles</li>
+                        <li>Prototyping & Wireframing (Self-Learning)</li>
+                        <li>Logical Problem Decomposition</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-background-dark p-6 rounded-xl shadow-2xl border-t-4 border-secondary-accent transition hover:shadow-primary-accent hover:shadow-md">
+                    <h3 class="text-xl font-semibold text-primary-accent mb-3"><i class="fas fa-code mr-2"></i> Programming & Data</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-gray">
+                        <li>Languages: Python, C, HTML</li>
+                        <li>Database: SQL</li>
+                        <li>Visualization Tool: Power BI (Expert)</li>
+                        <li>Core Competencies: Quick Learner & Adaptability</li>
+                    </ul>
+                </div>
+
+                <div class="bg-background-dark p-6 rounded-xl shadow-2xl border-t-4 border-secondary-accent transition hover:shadow-primary-accent hover:shadow-md">
+                    <h3 class="text-xl font-semibold text-primary-accent mb-3"><i class="fas fa-briefcase mr-2"></i> Experience & Certifications</h3>
+                    <ul class="list-disc list-inside space-y-2 text-text-gray">
+                        <li>AI Intern - Macreq Manufacturing Services</li>
+                        <li>Data Science Intern - Prodigy Infotech</li>
+                        <li>Java Developer - Quality Thought (Certified)</li>
+                        <li>Introduction to IOT 4.0 - NPTEL (Certified)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-background-dark">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold section-title text-text-light">Let's Connect</h2>
+            <p class="text-lg text-text-gray mb-8 max-w-3xl mx-auto">I'm actively seeking an entry-level role and am ready to contribute my analytical and programming skills to your team. Reach out below!</p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-10 mb-10">
+                <div class="p-4 bg-card-dark rounded-xl shadow-2xl border border-secondary-accent border-opacity-30">
+                    <i class="fas fa-envelope text-4xl text-primary-accent mb-2"></i>
+                    <p class="font-semibold text-text-light">Email</p>
+                    <a href="mailto:monishamarimuthu13@gmail.com" class="text-secondary-accent hover:underline">monishamarimuthu13@gmail.com</a>
+                </div>
+                <div class="p-4 bg-card-dark rounded-xl shadow-2xl border border-secondary-accent border-opacity-30">
+                    <i class="fas fa-phone text-4xl text-primary-accent mb-2"></i>
+                    <p class="font-semibold text-text-light">Phone</p>
+                    <p class="text-secondary-accent">+91 9790517153</p>
+                </div>
+                <div class="p-4 bg-card-dark rounded-xl shadow-2xl border border-secondary-accent border-opacity-30">
+                    <i class="fab fa-linkedin-in text-4xl text-primary-accent mb-2"></i>
+                    <p class="font-semibold text-text-light">LinkedIn</p>
+                    <a href="https://tinyurl.com/bddzjepz" target="_blank" class="text-secondary-accent hover:underline">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Simple Contact Form Mockup -->
+            <form action="#" class="max-w-xl mx-auto space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-600 bg-card-dark text-text-light rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-primary-accent" required>
+                <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-600 bg-card-dark text-text-light rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-primary-accent" required>
+                <textarea placeholder="Your Message" rows="5" class="w-full p-3 border border-gray-600 bg-card-dark text-text-light rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-primary-accent" required></textarea>
+                <button type="submit" class="w-full bg-secondary-accent text-background-dark px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-opacity-80 transition duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card-dark text-text-gray py-6 border-t border-secondary-accent border-opacity-20">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm flex-wrap">
+            <p>&copy; 2025 Monisha M. Data Analyst Portfolio.</p>
+            <div class="space-x-4 mt-2 md:mt-0">
+                <a href="https://tinyurl.com/bddzjepz" target="_blank" class="hover:text-primary-accent transition duration-300" title="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="https://github.com/Monishahee" target="_blank" class="hover:text-primary-accent transition duration-300" title="GitHub"><i class="fab fa-github text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for internal link handling and smooth scrolling (Good UX) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); 
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
